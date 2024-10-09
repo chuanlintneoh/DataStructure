@@ -16,3 +16,25 @@ Meanwhile, the compiled output files will be generated in the `bin` folder by de
 ## Dependency Management
 
 The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+
+## Execute the Code
+
+1. Compile:
+
+```
+javac -d <directory> <source files>
+```
+- Example:
+```
+javac -d bin src/Graph/Graph.java
+```
+
+2. Run:
+
+```
+java -cp <class path> <main class>
+```
+- Example:
+```
+java -cp bin Graph.Graph
+```
