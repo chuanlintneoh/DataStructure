@@ -214,13 +214,21 @@ public class Runner {
                     System.out.print("Enter root node primary key: ");
                     String bfs_rootNode = sc.nextLine();
                     int bfs_rootKey = Integer.parseInt(bfs_rootNode);
+                    if (!graph.doesNodeExist(bfs_rootKey)){
+                        System.out.printf("Root node of primary key %d does not exist.\n", bfs_rootKey);
+                        break;
+                    }
                     new BFS(graph.nodes.get(bfs_rootKey), true);
                     break;
                 case "dfs":
                     System.out.print("Enter root node primary key: ");
                     String dfs_rootNode = sc.nextLine();
                     int dfs_rootKey = Integer.parseInt(dfs_rootNode);
-                    // new DFS(graph.nodes.get(bfs_rootKey), true);
+                    if (!graph.doesNodeExist(dfs_rootKey)){
+                        System.out.printf("Root node of primary key %d does not exist.\n", dfs_rootKey);
+                        break;
+                    }
+                    new DFS(graph.nodes.get(dfs_rootKey), true);
                     break;
                 
                 case "xdn": // clear all edges of a node
