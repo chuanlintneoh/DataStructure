@@ -31,6 +31,10 @@ public class BFS {
                         System.out.printf("Neighbor node %s was visited before, thus not offered to queue.\n", neighbor);
                         continue;
                     }
+                    if (queue.contains(neighbor)){
+                        System.out.printf("Neighbor node %s is already in the queue, thus not added.\n", neighbor);
+                        continue;
+                    }
                     if (!queue.offer(neighbor)){
                         success = false;
                         System.out.printf("Failed to offer node %s into queue.\n", neighbor);
